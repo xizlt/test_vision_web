@@ -25,6 +25,7 @@ urlpatterns = [
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
     path("api/accounts/", include("accounts.urls")),
+    path("message/", views.MessageViewSet.as_view(), name='message'),
     path("", views.MainView.as_view()),
 ]
 if settings.DEBUG:
