@@ -20,5 +20,6 @@ class Block(models.Model):
     def __str__(self):
         return self.title
 
-    class Meta:
-        abstract = True
+    # class Meta:
+    #     abstract = True
+
