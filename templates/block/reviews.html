@@ -1,47 +1,25 @@
 <div class="aa-testimonials-section section">
   <div class="container">
     <div class="text-center">
-      <h2 class="title mt-0">What our customers are saying</h2>
-      <p>Real user testimonials are great way to attract new customers and increase their trust into using your app.<br/>Replace the testimonials below with the ones for your own app.</p>
+      <h2 class="title mt-0">{{ review.title }}</h2>
+      <p>{{ review.text }}</p>
     </div>
     <div class="aa-testimonials">
       <div class="row">
+        {% for i in review.point.all %}
         <div class="col-md-4 mb-3">
           <div class="aa-testimonials-body">
-            <p>Awesome App is awesome and I can't imagine working on my projects without it. It has saved me countless hours of time and has increased my productivity.</p>
+            <p>{{ i.text }}</p>
             <div class="row pt-3">
-              <div class="col-lg-5 col-md-12"><img class="img-fluid" src="../static/images/user1.jpg" alt="Face 1"/></div>
+              <div class="col-lg-5 col-md-12"><img class="img-fluid" src="{{ i.img }}" alt="Face 1"/></div>
               <div class="col-lg-7 col-md-12 pt-3">
-                <div class="h5">Patrick Harry</div>
-                <p class="text-muted">CEO, Awesome Inc.</p>
+                <div class="h5">{{ i.name }}</div>
+                <p class="text-muted">{{ i.position }}</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-3">
-          <div class="aa-testimonials-body">
-            <p>Awesome App is awesome and I can't imagine working on my projects without it. It has saved me countless hours of time and has increased my productivity.</p>
-            <div class="row pt-3">
-              <div class="col-lg-5 col-md-12"><img class="img-fluid" src="../static/images/user2.jpg" alt="Face 2"/></div>
-              <div class="col-lg-7 col-md-12 pt-3">
-                <div class="h5">Jeanne Lawson</div>
-                <p class="text-muted">Design, Awesome Inc</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="aa-testimonials-body">
-            <p>Awesome App is awesome and I can't imagine working on my projects without it. It has saved me countless hours of time and has increased my productivity.</p>
-            <div class="row pt-3">
-              <div class="col-lg-5 col-md-12"><img class="img-fluid" src="../static/images/user3.jpg" alt="Face 3"/></div>
-              <div class="col-lg-7 col-md-12 pt-3">
-                <div class="h5">Robin Barnes</div>
-                <p class="text-muted">Developer, Awesome Inc</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
